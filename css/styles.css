@@ -1,0 +1,40 @@
+/* Colors */
+                                      /* https://www.w3schools.com/css/css3_variables.asp */
+:root {
+  --bone: #f7f5ed;
+  --lp: #e5dede;
+  --dp: #520a1f;
+  --lb: #dbe3e8;
+  --db: #3d5466;
+  --lg: #d9e5cc;
+  --dg: #476130;
+  --ly: #fce8c2;
+  --dy: #d6940a;
+  --wht: #ffffff;
+  --blk: #232323;
+}
+
+body {
+  background-color: var(--bone);
+  color: var(--blk);
+}
+
+/* Buttons */
+.btn {
+  background-color: var(--dp); 
+  color: var(--bone); 
+}
+
+#timePeriodCard .btn {
+  background-color: var(--dg); 
+  color: var(--bone); 
+}
+
+#timePeriodCard {
+  top: 20px;
+  left: 20px;
+}
+#legend {
+  top: 20px;
+  right: 20px;
+}
