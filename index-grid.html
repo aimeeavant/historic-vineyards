@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset=utf-8 />
+    <title>Grid template</title>
+    <meta name='viewport' content='initial-scale=1,maximum-scale=1,user-scalable=no' />
+
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.css" rel="stylesheet" />
+    <link href="https://unpkg.com/leaflet@1.6.0/dist/leaflet.css" rel="stylesheet" />
+
+
+    <style>
+        /* CSS rules written here */
+        .grid-container {
+            display: grid;
+            grid-template-columns: auto 100px;
+            grid-template-rows: auto 30px;
+        }
+
+        #map {
+            width: 100%;
+            height: 90vh;
+            grid-row-start: 1;
+            grid-row-end: 2;
+            grid-column-start: 1;
+            grid-column-end: 3;
+        }
+
+        .legend {
+            padding: 10px;
+            grid-row-start: 2;
+            grid-row-end: 3;
+            grid-column-start: 1;
+            grid-column-end: 2;
+        }
+
+        .photos {
+            display: none;
+        }
+
+        .marker {
+            height: 25px;
+            float: left;
+            margin: 0 10px;
+        }
+
+        @media screen and (orientation : landscape) {
+            #map {
+                width: 100%;
+                height: 100vh;
+                /* Fill screen, but... */
+                grid-column: 1 / 2;
+                /* Start at grid line 1 and end at 2. That's the left column. */
+                grid-row: 1 / 3;
+                /* This spans the top and bottom columns. */
+            }
+
+            .legend {
+                padding: 10px;
+                grid-column: 2 / 3;
+                /* Show on the right column */
+                grid-row: 1 / 3;
+                /* This spans the top and bottom columns. */
+            }
+
+            .marker {
+                height: 35px;
+                text-align: center;
+                margin: 0 20px 5px 20px;
+            }
+
+            .photos {
+                height: 75px;
+                margin: 10px 0;
+                display: inherit;
+                /* The parent is visible, so make the photo. */
+            }
+        }
+    </style>
+
+</head>
+
+<body>
+<!-- 
+    ++++++++++++++++++++++++++++++++++++++++++++++++
+    Overview of Grid:
+    https://css-tricks.com/snippets/css/complete-guide-grid/#prop-grid-column-row-start-end
+    +++++++++++++++++++++++++++++++++++++++++++++++++
+ -->
+    <!-- start grid container -->
+    <div class="grid-container">
+        <!-- map division -->
+        <div id="map"></div>
+        <!-- legend division -->
+        <div class="legend"><img class="marker"
+                src="https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.3.4/images/marker-icon.png">
+            <b>Lexington</b> Capital of Bluegrass
+            <img class="photos" src="https://farm1.staticflickr.com/931/43268486304_108bffa9f8_s.jpg" width="75px"
+                height="75px" alt="Skyline">
+        </div>
+        <!-- end grid container -->
+    </div>
+
+
+    <script src="https://unpkg.com/leaflet@1.6.0/dist/leaflet.js"></script>
+    <script>
+        var options = {
+            center: [38.0406, -84.5037],
+            // center: [35.3102, -120.4358], // SLO
+            zoom: 8
+        }
+
+        var map = L.map('map', options);
+
+        var basemap_url = 'https://cartodb-basemaps-{s}.global.ssl.fastly.net/rastertiles/light_all/{z}/{x}/{y}.png'
+
+        var basemap_attributes = {
+            attribution: '© <a href="http://www.openstreetmap.org/copyright">OpenStreetMap</a> © <a href="http://cartodb.com/attributions">CartoDB</a>',
+            subdomains: 'abcd',
+            maxZoom: 19
+        }
+
+        var tiles = L.tileLayer(basemap_url, basemap_attributes).addTo(map);
+
+        var message = 'Lexington is awesome!';
+
+        L.marker(map.getCenter())
+            .bindTooltip(message)
+            .addTo(map)
+            .openTooltip();
+    </script>
+
+</body>
+
+</html>
