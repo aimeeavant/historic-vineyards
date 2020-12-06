@@ -1,24 +1,28 @@
 
-
-// Create variable to hold initial option.
-let options = {
-    center: [35.3102, -120.4358],
-    zoom: 4,
-    zoomSnap: .1,
-}
-
 // Create variable to hold the map
-var map = L.map('map', options);
+// slo center: [35.3102, -120.4358]
+const map = L.map('map').setView([35.31, -120.43], 6);
+
+const options = {
+    minZoom: 0,
+    maxZoom: 9,
+    opacity: 1,
+    tms: true,
+    attribution: 'Elevation &copy; <a href="https://www.naturalearthdata.com/">Natural Earth</a>'
+};
 
 
-var basemap_url = 'https://{s}.tile.opentopomap.org/{z}/{x}/{y}.png'
+const tiles = L.tileLayer('https://outragegis.com/tiles/world/ne_v01/{z}/{x}/{y}.jpg', options).addTo(map);
 
-var basemap_attributes = {
+// Add base map
+const openTopoTiles = L.tileLayer(
+    'https://{s}.tile.opentopomap.org/{z}/{x}/{y}.png', {
     attribution: 'Map data: &copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors, <a href="http://viewfinderpanoramas.org">SRTM</a> | Map style: &copy; <a href="https://opentopomap.org">OpenTopoMap</a> (<a href="https://creativecommons.org/licenses/by-sa/3.0/">CC-BY-SA</a>)',
     maxZoom: 17
-}
+});
 
-var tiles = L.tileLayer(basemap_url, basemap_attributes).addTo(map);
+openTopoTiles.addTo(map);
+
 
 
 // add scale bar
@@ -35,13 +39,15 @@ var countyLayer = jQuery.getJSON("data/sloCountyBoundary.geojson", function (dat
                 //color: '#5E94AD',
                 color: 'MidnightBlue',
                 weight: 1,
-                fillOpacity: 1,
+                fillOpacity: .1,
                 fillColor: '#1f78b4'
             };
         }
     }).addTo(map);
-    // can call to new function here gets the data out of the callback function  
-   // map.fitBounds(countyLayer.getBounds())
+
+    map.fitBounds(countyLayer.getBounds())
 
 });// end of callback function
+
+
 
