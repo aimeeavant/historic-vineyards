@@ -1,53 +1,21 @@
-
-// Create variable to hold the map
-// slo center: [35.3102, -120.4358]
-const map = L.map('map').setView([35.31, -120.43], 6);
-
-const options = {
-    minZoom: 0,
-    maxZoom: 9,
-    opacity: 1,
-    tms: true,
-    attribution: 'Elevation &copy; <a href="https://www.naturalearthdata.com/">Natural Earth</a>'
-};
+// bootstrap is handling the toggle for panels
 
 
-const tiles = L.tileLayer('https://outragegis.com/tiles/world/ne_v01/{z}/{x}/{y}.jpg', options).addTo(map);
+// toggle for buttons
 
-// Add base map
-const openTopoTiles = L.tileLayer(
-    'https://{s}.tile.opentopomap.org/{z}/{x}/{y}.png', {
-    attribution: 'Map data: &copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors, <a href="http://viewfinderpanoramas.org">SRTM</a> | Map style: &copy; <a href="https://opentopomap.org">OpenTopoMap</a> (<a href="https://creativecommons.org/licenses/by-sa/3.0/">CC-BY-SA</a>)',
-    maxZoom: 17
+        // buttons have ids of showDECADE
+
+
+$("#show1800").click(function () {
+console.log("1800 button")
+    //redraw map with filtered data
+
+ 
 });
 
-openTopoTiles.addTo(map);
 
 
 
-// add scale bar
-L.control.scale({ metric: false, position: 'bottomleft', maxWidth: 200 }).addTo(map);
-
-
-// -------- Add Data ------>
-
-
-var countyLayer = jQuery.getJSON("data/sloCountyBoundary.geojson", function (data) {
-    var countyLayer = L.geoJson(data, {
-        style: function (feature) {
-            return {
-                //color: '#5E94AD',
-                color: 'MidnightBlue',
-                weight: 1,
-                fillOpacity: .1,
-                fillColor: '#1f78b4'
-            };
-        }
-    }).addTo(map);
-
-    map.fitBounds(countyLayer.getBounds())
-
-});// end of callback function
 
 
 

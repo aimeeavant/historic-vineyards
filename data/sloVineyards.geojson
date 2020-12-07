@@ -1,0 +1,488 @@
+{
+    "type": "FeatureCollection",
+    "name": "sloVineyards",
+    "crs": {
+        "type": "name",
+        "properties": {
+            "name": "urn:ogc:def:crs:OGC:1.3:CRS84"
+        }
+    },
+    "features": [
+        {
+            "type": "Feature",
+            "properties": {
+                "Winery or Grower": "Maison-Duetz",
+                "Active": 1982,
+                "Inactive": null,
+                "Latitude": 35.08624,
+                "Longitude": -120.52929,
+                "AVA": "Edna Valley",
+                "sub-AVA": null,
+                "On Petition": "false",
+                "When Est": "true",
+                "Bond Number": "unknown",
+                "Historical Significance": "Established by Andre Alllier-Deutz of Champagne Deutz, France, to make spakling wines outside the Champagne region. French winemaker Christian Roguenant became Maison Deutz in 1986.",
+                "Address": "453 Deutz Drive, Arroyo Grande",
+                "Notes": "changed ownership and was reamed Laetitia Winery.",
+                "field_14": null,
+                "field_15": null,
+                "field_16": null
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -120.52929,
+                    35.08624
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "Winery or Grower": "Talley Vineyards",
+                "Active": 1986,
+                "Inactive": null,
+                "Latitude": 35.17993,
+                "Longitude": -120.52324,
+                "AVA": "Arroyo Grande Valley",
+                "sub-AVA": null,
+                "On Petition": "true",
+                "When Est": "true",
+                "Bond Number": "unknown",
+                "Historical Significance": "Oliver Talley founded Talley Farms in 1948. His son Don Talley and Don's wife Rosemary planted the first grapes in 1982.",
+                "Address": null,
+                "Notes": null,
+                "field_14": null,
+                "field_15": null,
+                "field_16": null
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -120.52324,
+                    35.17993
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "Winery or Grower": "Saucelito Canyon",
+                "Active": 1975,
+                "Inactive": null,
+                "Latitude": 35.18568,
+                "Longitude": -120.39853,
+                "AVA": "Arroyo Grande Valley",
+                "sub-AVA": null,
+                "On Petition": "true",
+                "When Est": "true",
+                "Bond Number": "unknown",
+                "Historical Significance": "The vineyard was first planted in the 1880s but abandoned after Prohibition. Tom Greenough restored the vineyards  in 1975.",
+                "Address": null,
+                "Notes": null,
+                "field_14": null,
+                "field_15": null,
+                "field_16": null
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -120.39853,
+                    35.18568
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "Winery or Grower": "Lawrence Winery/Corbett Canyon Vineyard",
+                "Active": 1979,
+                "Inactive": null,
+                "Latitude": 35.18862,
+                "Longitude": -120.5857,
+                "AVA": "Edna Valley",
+                "sub-AVA": null,
+                "On Petition": "true",
+                "When Est": "true",
+                "Bond Number": "unknown",
+                "Historical Significance": "The Lawrence Family Winery was founded by Jim Lawrence on part of the original Pedro de Coralles land grant. It became Corbett Canyon in the 1980s.",
+                "Address": "2195 Corbett Canyon Road san luis obsipo",
+                "Notes": null,
+                "field_14": null,
+                "field_15": null,
+                "field_16": null
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -120.5857,
+                    35.18862
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "Winery or Grower": "Chamisal Vineyard",
+                "Active": 1973,
+                "Inactive": null,
+                "Latitude": 35.20036,
+                "Longitude": -120.57169,
+                "AVA": "Edna Valley",
+                "sub-AVA": null,
+                "On Petition": "true",
+                "When Est": "true",
+                "Bond Number": "unknown",
+                "Historical Significance": "Norman Goss was the first to plant vineyards in the Edna Valley. He bought and planted a 57-acre parcel of the old Rancho Bolsa de Chamisal.",
+                "Address": null,
+                "Notes": null,
+                "field_14": null,
+                "field_15": null,
+                "field_16": null
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -120.57169,
+                    35.20036
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "Winery or Grower": "Edna Valley Vineyard",
+                "Active": null,
+                "Inactive": null,
+                "Latitude": 35.21694,
+                "Longitude": -120.60767,
+                "AVA": "Edna Valley",
+                "sub-AVA": null,
+                "On Petition": "true",
+                "When Est": "true",
+                "Bond Number": "unknown",
+                "Historical Significance": "Co-owned by Paragon and Chalone Winery. Gary R. Mosby was a petitioner for AVA status.",
+                "Address": "2585 Biddle Ranch Rd San Luis Obispo, CA 93401",
+                "Notes": null,
+                "field_14": null,
+                "field_15": null,
+                "field_16": null
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -120.60767,
+                    35.21694
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "Winery or Grower": "Paragon Vineyard",
+                "Active": 1973,
+                "Inactive": null,
+                "Latitude": 35.23144,
+                "Longitude": -120.61169,
+                "AVA": "Edna Valley",
+                "sub-AVA": null,
+                "On Petition": "true",
+                "When Est": "true",
+                "Bond Number": "unknown",
+                "Historical Significance": "Jack Niven was the second person to plant wine grapes in the Edna Valley. His son John R. Niven was a petitioner for AVA status.",
+                "Address": null,
+                "Notes": null,
+                "field_14": null,
+                "field_15": null,
+                "field_16": null
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -120.61169,
+                    35.23144
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "Winery or Grower": "Martinelli",
+                "Active": 1926,
+                "Inactive": 2013,
+                "Latitude": 35.52597,
+                "Longitude": -120.72653,
+                "AVA": "Paso Robles",
+                "sub-AVA": null,
+                "On Petition": "false",
+                "When Est": "true",
+                "Bond Number": "BW 3971",
+                "Historical Significance": "The winery was established just prior to World War II by Amedeo Martinelli of Milan, Italy. He planted a new vineyard of Zinfandel and Burgundy grapes. Closed – now owned by Turley. ",
+                "Address": null,
+                "Notes": null,
+                "field_14": null,
+                "field_15": null,
+                "field_16": null
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -120.72653,
+                    35.52597
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "Winery or Grower": "York Mountain Winery",
+                "Active": 1970,
+                "Inactive": 2001,
+                "Latitude": 35.54332,
+                "Longitude": -120.82748,
+                "AVA": "York Mountain",
+                "sub-AVA": null,
+                "On Petition": "true",
+                "When Est": "true",
+                "Bond Number": "BW 146",
+                "Historical Significance": " Established as Ascension Winery in 1895, one of the first wineries on the California Coast by Andrew York who soon renamed it York Winery. The York family occupied this land, grew grapes, and made Zinfandel wine for three generations. It is the longest running family-owned winery in the history of San Luis Obispo County. ",
+                "Address": null,
+                "Notes": null,
+                "field_14": null,
+                "field_15": null,
+                "field_16": null
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -120.82748,
+                    35.54332
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "Winery or Grower": "Mastantuono",
+                "Active": 1976,
+                "Inactive": null,
+                "Latitude": 35.55295,
+                "Longitude": -120.75955,
+                "AVA": "Paso Robles",
+                "sub-AVA": null,
+                "On Petition": null,
+                "When Est": "true",
+                "Bond Number": "BW 4815",
+                "Historical Significance": "Established in 1976 by Pasquale Mastantuono.  Mastantuono Winery is the fifth oldest winery in the Paso Robles AVA.",
+                "Address": null,
+                "Notes": "aquired by Donati Family Vineyards  related to lonw madrone",
+                "field_14": null,
+                "field_15": null,
+                "field_16": null
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -120.75955,
+                    35.55295
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "Winery or Grower": "Pesenti Winery",
+                "Active": 1934,
+                "Inactive": null,
+                "Latitude": 35.5545,
+                "Longitude": -120.75099,
+                "AVA": "Paso Robles",
+                "sub-AVA": null,
+                "On Petition": "false",
+                "When Est": "true",
+                "Bond Number": "BW 3974",
+                "Historical Significance": "Frank Pesenti originally worked for the Yorks and decided to strike out on his own. He planted grapevines with cuttings from Adoph Siot in 1923 and established his own winery in 1924. Closed - now owned by Turley.",
+                "Address": null,
+                "Notes": null,
+                "field_14": null,
+                "field_15": null,
+                "field_16": null
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -120.75099,
+                    35.5545
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "Winery or Grower": "Rotta Winery/Las Tablas Winery",
+                "Active": 1920,
+                "Inactive": 2014,
+                "Latitude": 35.55577,
+                "Longitude": -120.74783,
+                "AVA": "Paso Robles",
+                "sub-AVA": null,
+                "On Petition": "false",
+                "When Est": "true",
+                "Bond Number": "BW 3976",
+                "Historical Significance": "Winery originally established by Adolph Siot in 1890. The Merten family purchased the winery in 1976 from the Rotta family, famous for making jug wine for over 70 years from old vine Zinfandel grapes.",
+                "Address": null,
+                "Notes": null,
+                "field_14": null,
+                "field_15": null,
+                "field_16": null
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -120.74783,
+                    35.55577
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "Winery or Grower": "El Paso de Robles Winery",
+                "Active": 1981,
+                "Inactive": null,
+                "Latitude": 35.57067,
+                "Longitude": 120.72618,
+                "AVA": "Paso Robles",
+                "sub-AVA": null,
+                "On Petition": null,
+                "When Est": "true",
+                "Bond Number": "BW 5025",
+                "Historical Significance": "The winery was bonded in 1981 and is located on Highway 46 West surrounded by 11 acres of vines.",
+                "Address": "",
+                "Notes": "guess location",
+                "field_14": null,
+                "field_15": null,
+                "field_16": null
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    120.72618,
+                    35.57067
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "Winery or Grower": "Martin Brothers Winery",
+                "Active": 1981,
+                "Inactive": null,
+                "Latitude": 35.6577,
+                "Longitude": -120.67482,
+                "AVA": "Paso Robles",
+                "sub-AVA": null,
+                "On Petition": null,
+                "When Est": "true",
+                "Bond Number": "BW 5057",
+                "Historical Significance": "A family-run winery,  by brothers Dominic and Tom, sisters Ann and Mary, sister-in-law Patrice, brother-in-law David, and father Edward Martin.",
+                "Address": null,
+                "Notes": "becomes Martin & Weyrich",
+                "field_14": null,
+                "field_15": null,
+                "field_16": null
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -120.67482,
+                    35.6577
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "Winery or Grower": "Estrella River Winery",
+                "Active": 1972,
+                "Inactive": null,
+                "Latitude": 35.66305,
+                "Longitude": -120.58302,
+                "AVA": "Paso Robles",
+                "sub-AVA": null,
+                "On Petition": null,
+                "When Est": "true",
+                "Bond Number": "BW 4804",
+                "Historical Significance": "The first vines were planted in 1974 by Cliff Giacobine and wine maker Gary Eberle. The Winery was completed in 1977.",
+                "Address": null,
+                "Notes": "becomes Meridian and",
+                "field_14": null,
+                "field_15": null,
+                "field_16": null
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -120.58302,
+                    35.66305
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "Winery or Grower": "Caparone Vineyard",
+                "Active": 1970,
+                "Inactive": null,
+                "Latitude": 35.69891,
+                "Longitude": -120.73671,
+                "AVA": "Paso Robles",
+                "sub-AVA": null,
+                "On Petition": null,
+                "When Est": "true",
+                "Bond Number": "BW 4961",
+                "Historical Significance": "Founded in 1979 by Dave Caparone.",
+                "Address": null,
+                "Notes": "2280 San Marcos Road, Paso Robles, CA",
+                "field_14": null,
+                "field_15": null,
+                "field_16": null
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -120.73671,
+                    35.69891
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "Winery or Grower": "Ranchita Oaks",
+                "Active": 1970,
+                "Inactive": null,
+                "Latitude": 35.74987,
+                "Longitude": -120.61439,
+                "AVA": "Paso Robles",
+                "sub-AVA": null,
+                "On Petition": null,
+                "When Est": "true",
+                "Bond Number": "BW 4935",
+                "Historical Significance": "The first vines were planted in 1970 by co-owners Ron Bergstrom and John Scott (winemaker).",
+                "Address": "3439 Ranchita Canyon Road in San Miguel",
+                "Notes": null,
+                "field_14": null,
+                "field_15": null,
+                "field_16": null
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -120.61439,
+                    35.74987
+                ]
+            }
+        }
+    ]
+}
