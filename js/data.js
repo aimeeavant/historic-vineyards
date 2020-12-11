@@ -25,7 +25,10 @@ var avaLayerYork = jQuery.getJSON("data/sloVineyards-v12.geojson", function (dat
         pointToLayer: function (feature, latlng) {
             var wineIcon = L.icon({
                 iconUrl: 'graphics/bottle-red-wine.png',
-                iconSize: [10, 10], // size of the icon
+                iconSize: [30, 30], // size of the icon
+                shadowUrl: 'graphics/shadow.png',
+                shadowSize: [35, 40],
+                shadowAnchor: [10, 20]
             });
 
             return L.marker(latlng, { icon: wineIcon })
@@ -40,7 +43,7 @@ var avaLayerYork = jQuery.getJSON("data/sloVineyards-v12.geojson", function (dat
             layer.on('mouseover', function () {
                 var hoverIcon = L.icon({
                     iconUrl: 'graphics/bottle-rose.png',
-                    iconSize: [10, 10], // size of the icon
+                    iconSize: [30, 30], // size of the icon
                 });
                 layer.setIcon(hoverIcon)
             }); // end on mouseover
@@ -48,7 +51,7 @@ var avaLayerYork = jQuery.getJSON("data/sloVineyards-v12.geojson", function (dat
             layer.on('mouseout', function () {
                 var wineIcon = L.icon({
                     iconUrl: 'graphics/bottle-red-wine.png',
-                    iconSize: [10, 10], // size of the icon
+                    iconSize: [30, 30], // size of the icon
                 });
                 layer.setIcon(wineIcon)
             });
