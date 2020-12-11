@@ -4,9 +4,11 @@ var countyLayer = jQuery.getJSON("data/sloCountyBoundary.geojson", function (dat
         style: function (feature) {
             return {
                 //color: '#5E94AD',
-                color: 'MidnightBlue',
-                weight: 1,
-                fillOpacity: .2,
+                // color: 'MidnightBlue',
+                color: '#520a1f',
+                weight: 10,
+                opacity: 0.4,
+                fillOpacity: 0,
                 fillColor: '#1f78b4'
             };
         }
