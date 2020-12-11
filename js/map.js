@@ -11,7 +11,7 @@ const options = {
 };
 
 
-const tiles = L.tileLayer('https://outragegis.com/tiles/world/ne_v01/{z}/{x}/{y}.jpg', options).addTo(map);
+const tiles = L.tileLayer('https://astoria.nyc3.cdn.digitaloceanspaces.com/tiles/world/ne_v01/{z}/{x}/{y}.jpg', options).addTo(map);
 
 // Add base map
 const openTopoTiles = L.tileLayer(
