@@ -30,7 +30,7 @@ L.tileLayer(`https://api.mapbox.com/styles/v1/${mapboxAccount}/${MapboxStyle}/ti
 // Use JQuery to get data for California outline and set map display
 // data used for basemap position only
 
-$.getJSON("data/california.geojson", function (data) {
+$.getJSON("./data/california.geojson", function (data) {
     // jQuery method uses AJAX request for the GeoJSON data
     console.log(data);
 
@@ -55,7 +55,7 @@ $.getJSON("data/california.geojson", function (data) {
 
 }); // end getJSON
 
-$.getJSON("data/ca_counties.geojson", function (data) {
+$.getJSON("./data/ca_counties.geojson", function (data) {
     // jQuery method uses AJAX request for the GeoJSON data
     console.log("counties");
     console.log(data);
@@ -75,7 +75,7 @@ $.getJSON("data/ca_counties.geojson", function (data) {
 }); // end getJSON
 
 // get acre data and convert the data into a map-ready Leaflet L.geoJson layer
-var dataImport = omnivore.csv('data/GrapeAcreData-v13-altversion.csv')
+var dataImport = omnivore.csv('./data/GrapeAcreData-v13-altversion.csv')
     .on('ready', function (e) {
         drawMap(e.target.toGeoJSON());
     })
