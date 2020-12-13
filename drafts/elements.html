@@ -1,0 +1,121 @@
+<div class="container-fluid">
+    <header class="row bg-dark text-white py-3">
+        <div class="col">
+            <h1>California Wine Grape Vineyards</h1>
+        </div>
+    </header>
+
+    <section class="row">
+        <div class="px-0">
+            <div id="map"></div>
+        </div>
+    </section>
+
+    <footer class="row bg-dark text-white py-3">
+        <div class="col">
+            <ul class="list-unstyled">
+                <li>Authored by: <a href="#">Aimee Armour-Avant</a></li>
+                <li>Date of authored map: Dec 15, 2020</li>
+                <li>Data Source: <a href="https://www.counties.org/data-and-research">Counties.org</a></li>
+            </ul>
+        </div>
+    </footer>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<!--  ui is outside of container-fluid and will be dynamically added to map -->
+
+    <!-- Radio Buttons -->
+    <div id="dropdown-ui" class="form-group mr-3 mt-3">
+        <h3 class="uiHeading">Select Grape Variety:</h3>
+    
+        <div class="form-check form-check-inline">
+            <input class="form-check-input" type="radio" name="inlineRadioOptions" id="cabernet_sauvignon_radio"
+                value="cabernet_sauvignon">
+            <label class="form-check-label" for="cabernet_sauvignon_radio">Cabernet Sauvignon</label>
+        </div>
+    
+        <div class="form-check form-check-inline">
+            <input class="form-check-input" type="radio" name="inlineRadioOptions" id="chardonnay_radio" value="chardonnay">
+            <label class="form-check-label" for="chardonnay_radio">Chardonnay</label>
+        </div>
+    
+        <div class="form-check form-check-inline">
+            <input class="form-check-input" type="radio" name="inlineRadioOptions" id="gewurztraminer_radio"
+                value="gewurztraminer">
+            <label class="form-check-label" for="gewurztraminer_radio">Gew&uuml;rztraminer</label>
+        </div>
+    
+        <div class="form-check form-check-inline">
+            <input class="form-check-input" type="radio" name="inlineRadioOptions" id="merlot_radio" value="merlot">
+            <label class="form-check-label" for="merlot_radio">Merlot</label>
+        </div>
+    
+        <div class="form-check form-check-inline">
+            <input class="form-check-input" type="radio" name="inlineRadioOptions" id="pinot_gris_radio" value="pinot_gris">
+            <label class="form-check-label" for="pinot_gris_radio">Pinot Gris (Pinot Grigio)</label>
+        </div>
+    
+        <div class="form-check form-check-inline">
+            <input class="form-check-input" type="radio" name="inlineRadioOptions" id="pinot_noir_radio" value="pinot_noir">
+            <label class="form-check-label" for="pinot_noir_radio">Pinot Noir</label>
+        </div>
+    
+        <div class="form-check form-check-inline">
+            <input class="form-check-input" type="radio" name="inlineRadioOptions" id="riesling_radio" value="riesling">
+            <label class="form-check-label" for="riesling_radio">Riesling</label>
+        </div>
+    
+        <div class="form-check form-check-inline">
+            <input class="form-check-input" type="radio" name="inlineRadioOptions" id="sauvignon_blanc_radio"
+                value="sauvignon_blanc">
+            <label class="form-check-label" for="sauvignon_blanc_radio">Sauvignon Blanc</label>
+        </div>
+    
+        <div class="form-check form-check-inline">
+            <input class="form-check-input" type="radio" name="inlineRadioOptions" id="syrah_radio" value="syrah">
+            <label class="form-check-label" for="syrah_radio">Syrah</label>
+        </div>
+    
+        <div class="form-check form-check-inline">
+            <input class="form-check-input" type="radio" name="inlineRadioOptions" id="zinfandel_radio" value="zinfandel">
+            <label class="form-check-label" for="zinfandel_radio">Zinfandel</label>
+        </div>
+    
+    </div>
+    
+    <!-- Slider -->
+    <div id='slider' class='range w240 bg-white round-ml px12'>
+        <input type="range">
+    </div>
+    
+    <!-- Legend -->
+    <div id='legend' class='bg-white round-ml px18 py12'>
+        <h3 class='txt-bold mb12 w-full mx-auto'>Acreage</h3>
+        <div class='bg-blue h180 w240 mx-auto'></div>
+    </div>
+    

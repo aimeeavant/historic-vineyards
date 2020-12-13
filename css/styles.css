@@ -1,93 +1,41 @@
 /* Colors */
-                                      /* https://www.w3schools.com/css/css3_variables.asp */
+/* https://www.w3schools.com/css/css3_variables.asp */
 :root {
-  --bone: #f7f5ed;
-  --lp: #e5dede;
-  --dp: #520a1f;
-  --lb: #dbe3e8;
-  --db: #3d5466;
-  --lg: #d9e5cc;
-  --dg: #476130;
-  --ly: #fce8c2;
-  --dy: #d6940a;
-  --wht: #ffffff;
-  --blk: #232323;
+--bone: #f7f5ed;
+--lp: #e5dede;
+--dp: #520a1f;
+--lb: #dbe3e8;
+--db: #3d5466;
+--lg: #d9e5cc;
+--dg: #476130;
+--ly: #fce8c2;
+--dy: #d6940a;
+--wht: #ffffff;
+--blk: #232323;
 }
 
 body {
-  background-color: var(--bone);
+  font-family: Inknut Antiqua;
+  background: var(--bone);
   color: var(--blk);
-  font-family: "Surveyor SSm A", "Surveyor SSm B";
-  font-style: normal;
-  font-weight: 400;
 }
-
-#map {
-  position: absolute;
-  top: 0;
-  bottom: 13px;
-  width: 100%;
-  background: rgba(63, 63, 63, 0.9);
+.link {
+  color: var(--dy);
 }
-
-#interface {
-  z-index: 1800;
+.link:hover {
+  color: var(--dg);
 }
-
-        header {
-          margin-top: 0;
-          margin-left: 50px;;
-          top: 10px;
-          left: 15px;
-          color: var(--dp); 
-          font-family: "Surveyor SSm A", "Surveyor SSm B";
-          font-style: italic;
-          font-weight: 700;
-        }
-
-        footer {
-          left: 0;
-          bottom: 0;
-          width: 100%;
-          color: var(--wht);
-          background-color: var(--dg);
-        }
-        footer p {
-          padding: 0 0 0 10px ;
-          margin: 0;
-          font-size: xx-small;
-        }
- 
-
-        /* Buttons */
-        .btn {
-          background-color: var(--dp); 
-          color: var(--bone); 
-          font-family: "Decimal 2 A", "Decimal 2 B";
-          font-style: normal;
-          font-weight: 800;
-        }
-
-        #timePeriodCard .btn {
-          background-color: var(--dg); 
-          color: var(--bone); 
-        }
-
-
-
-        /* Panels */
-        #timePeriodCard {
-          top: 120px;
-          left: 20px;
-        }
-
-        #legend {
-          top: 120px;
-          left: 120px;
-        }
-
-        #infoDisplay{
-          top: 120px;
-          left: 220px;
-        }
-
+.leaflet-container {
+  font-family: Inknut Antiqua;
+  background: #ECF3F4;
+  color: #666;
+}
+.leaflet-control-layers, .leaflet-control-layers-expanded, .leaflet-control {
+  background: transparent;
+}
+.leaflet-touch .leaflet-control-layers, .leaflet-touch .leaflet-bar {
+  border: 0px;
+}
+#info {
+  z-index: 1000;
+}

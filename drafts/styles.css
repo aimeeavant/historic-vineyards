@@ -1,0 +1,99 @@
+/* Colors */
+                                      /* https://www.w3schools.com/css/css3_variables.asp */
+:root {
+  --bone: #f7f5ed;
+  --lp: #e5dede;
+  --dp: #520a1f;
+  --lb: #dbe3e8;
+  --db: #3d5466;
+  --lg: #d9e5cc;
+  --dg: #476130;
+  --ly: #fce8c2;
+  --dy: #d6940a;
+  --wht: #ffffff;
+  --blk: #232323;
+}
+
+body {
+  background-color: var(--bone);
+  color: var(--blk);
+  font-family: "Surveyor SSm A", "Surveyor SSm B";
+  font-style: normal;
+  font-weight: 400;
+}
+
+#map {
+  height: 100vh;
+  width: 100%;
+  background: rgba(63, 63, 63, 0.9);
+}
+
+        /* Panels */
+
+
+
+        #infoDisplay{
+          top: 120px;
+          left: 220px;
+        }
+
+
+    
+
+        #legend {
+          font-size: 1rem;
+          border-radius: 5px;
+          max-width: 300px;
+          font-family: 'Open Sans', sans-serif;
+        }
+    
+        #legend span {
+          width: 20px;
+          height: 20px;
+          float: left;
+          margin: 0 10px 4px 0;
+        }
+    
+        #legend label {
+          font-size: 0.9rem;
+        }
+    
+        #legend label:after {
+          content: '';
+          display: block;
+          clear: both;
+        }
+        .form-control:focus {
+            border-color: #FF8053;
+            box-shadow: 0px 1px 1px rgba(0, 0, 0, 0.075) inset, 0px 0px 8px orange;
+          }
+    
+        .legendSubhead {
+          padding-bottom: 10px;
+          color: #FF8053;
+        }
+        .text-orange {
+          color: #f4830b;
+        }
+            a {
+          color: #f4830b;
+        }
+        .bg-black {
+          background-color: #FFFFEB;
+        }
+        .legendPara {
+          line-height: 1em;
+          padding-left: 25px;
+        }
+        .uiHeading {
+          color: white;
+          font-size: 1em;
+        }
+        /* Small devices (landscape phones, 576px and up) */
+        @media (min-width: 576px) {}
+    
+        /* Large devices (desktops, 992px and up) */
+        @media (min-width: 992px) {}
+    
+        /* Extra large devices (large desktops, 1200px and up) */
+        @media (min-width: 1200px) {}
