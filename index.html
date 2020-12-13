@@ -50,11 +50,12 @@
             <div id="map" class='viewport-twothirds viewport-full-ml'></div>
 
             <!-- slider -->
+            <!-- adding autocomplete="off" to input makes it reset on page refresh! -->
             <div id='slider' class='w200 px12 py12'>
                 <h3 class='txt-l'><span>1971</span> 
                 </h3>
                 <div class='range'>
-                    <input type="range" min="1971" , max="2021" , value="1971" , step="10" />
+                    <input autocomplete="off" type="range" min="1971" max="2021"  value="1971" step="10" />
                 </div>
             </div>
 
@@ -83,12 +84,13 @@
 
         <!-- ui info panel -->
         <div id='info' class='py6 px12 bg-white border border--gray-light round fixed w240'>
-            <p><span class="infoName"></span> County</p>
-            <p><span class='infoYear'></span>: <span class='infoAcres txt-l txt-bold'></span> acres</p>
+            <p class="infoName txt-s"><span class="infoName"></span> County</p>
+            <p class="infoGrape txt-xs"><span class="infoGrape"></span></p>
+            <p class='infoYear txt-xs'><span class='infoYear'></span>: <span class='infoAcres txt-xs'></span> acres</p>
             <!-- Sparkline -->
             <hr class='txt-hr'>
-            <p class='my6'>Trend: 1971 &ndash; 2019</p>
-            <p class='mb6'><span class='grapepark'></span></p>
+            <p class='my6 txt-xs'>Trend: 1971 &ndash; 2019</p>
+            <p class='mb6'><span class='grapespark'></span></p>
         </div>
 
 
@@ -109,7 +111,9 @@
     
     <!-- jQuery Js -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-sparklines/2.1.2/jquery.sparkline.min.js"></script>
+
 
     <!-- Custom Javascript -->
     <script src='js/app.js'></script>

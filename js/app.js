@@ -38,6 +38,7 @@ $.getJSON("../data/california.geojson", function (data) {
         // style counties with initial default path options
         style: function (feature) {
             return {
+                color: '#476130',
                 weight: 1,
                 strokeOpacity: 1,
                 fillOpacity: 0,
@@ -62,9 +63,11 @@ $.getJSON("../data/ca_counties.geojson", function (data) {
         // style counties with initial default path options
         style: function (feature) {
             return {
-                weight: 1,
+                color: '#476130',
+                weight: .5,
                 strokeOpacity: 1,
                 fillOpacity: 0,
+                dashArray: '4 1 2 3'
             };
         }
     }) // end of conversion to Leaflet object
@@ -150,7 +153,10 @@ function drawLayerControl(csLayer, chLayer, geLayer, meLayer, pgLayer, pnLayer, 
 
     // create Leaflet control for layer visibility
     // basemap, source layers, options
-    var layerControl = L.control.layers(null, sourceLayers, { collapsed: false, position: 'topleft' }).addTo(map);
+    var layerControl = L.control.layers(null, sourceLayers, { 
+        collapsed: false, 
+        position: 'topleft',
+    }).addTo(map);
 
 }
 
@@ -309,13 +315,15 @@ function drawLegend(csLayer, chLayer, geLayer, meLayer, pgLayer, pnLayer, reLaye
 function processLayer(csLayer, chLayer, geLayer, meLayer, pgLayer, pnLayer, riLayer, sbLayer, syLayer, ziLayer, currentYear) {
 
     // hide info panel from view initially
-    const info = $('#info').hide();
+     const info = $('#info').hide();
+    // const info = $('#info')
 
-    // `CS${currentYear}`
+    // set radius based on year displayed
     csLayer.eachLayer(function (layer) {
         let value = layer.feature.properties[`CS${currentYear}`]
         const radius = getRadius(value)
         layer.setRadius(radius);
+        layer.bringToFront()
     });
 
     chLayer.eachLayer(function (layer) {
@@ -372,19 +380,8 @@ function processLayer(csLayer, chLayer, geLayer, meLayer, pgLayer, pnLayer, riLa
         layer.setRadius(radius);
     });
 
-
-    /*     <div id='info' class='py6 px12 bg-white border border--gray-light round fixed w240'>
-            <p><span class="infoName"></span> County</p>
-            <p><span class='infoYear'></span>: <span class='txt-l txt-bold'></span> acres</p>
-            <!-- Sparkline -->
-            <hr class='txt-hr'>
-            <p class='my6'>Trend: 1971 &ndash; 2019</p>
-            <p class='mb6'><span class='grapepark'></span></p>
-        </div> */
-
-
-    // `CS${currentYear}`
-    // add mouseover info panels
+    // start info
+    // add mouseover info panels to each layer
     csLayer.on('mouseover', function (e) {
         console.log(e)
         // remove the none class to display and show
@@ -393,8 +390,21 @@ function processLayer(csLayer, chLayer, geLayer, meLayer, pgLayer, pnLayer, riLa
         const props = e.layer.feature.properties;
         // populate HTML elements with relevant info
         $('span.infoName').html(props.County);
+        $('span.infoGrape').html('Cabernet Sauvignon');
         $('span.infoYear').html(currentYear);
         $('span.infoAcres').html(props[`CS${currentYear}`]);
+
+        let grapeCode = 'CS';
+        let grapeValues = makeSparkline(e.layer, grapeCode);
+        console.log(grapeValues)
+        $('.grapespark').sparkline(grapeValues, {
+            width: '210px',
+            height: '30px',
+            lineColor: '#000000',
+            fillColor: '#D98939 ',
+            spotRadius: 0,
+            lineWidth: .5
+        });
 
         // raise opacity level as visual affordance
         e.layer.setStyle({
@@ -417,7 +427,449 @@ function processLayer(csLayer, chLayer, geLayer, meLayer, pgLayer, pnLayer, riLa
             fillOpacity: 0.2,
         });
     });
+    // end info 
 
+       // start info
+    // add mouseover info panels to each layer
+    chLayer.on('mouseover', function (e) {
+        console.log(e)
+        // remove the none class to display and show
+        info.show();
+        // access properties of target layer
+        const props = e.layer.feature.properties;
+        // populate HTML elements with relevant info
+        $('span.infoName').html(props.County);
+        $('span.infoGrape').html('Chardonnay');
+        $('span.infoYear').html(currentYear);
+        $('span.infoAcres').html(props[`CS${currentYear}`]);
+
+        let grapeCode = 'CH';
+        let grapeValues = makeSparkline(e.layer, grapeCode);
+        console.log(grapeValues)
+        $('.grapespark').sparkline(grapeValues, {
+            width: '210px',
+            height: '30px',
+            lineColor: '#000000',
+            fillColor: '#D98939 ',
+            spotRadius: 0,
+            lineWidth: .5
+        });
+
+        // raise opacity level as visual affordance
+        e.layer.setStyle({
+            fillOpacity: .8,
+            fillColor: 'LightGoldenrodYellow'
+        });
+    })
+    chLayer.on('mouseout', function (e) {
+        // hide the info panel
+        info.hide();
+
+        // reset the layer style
+        e.layer.setStyle({
+            stroke: true,
+            color: '#520a1f',
+            weight: 1,
+            opacity: 1,
+            fill: true,
+            fillColor: '#520a1f',
+            fillOpacity: 0.2,
+        });
+    });
+    // end info 
+
+       // start info
+    // add mouseover info panels to each layer
+    geLayer.on('mouseover', function (e) {
+        console.log(e)
+        // remove the none class to display and show
+        info.show();
+        // access properties of target layer
+        const props = e.layer.feature.properties;
+        // populate HTML elements with relevant info
+        $('span.infoName').html(props.County);
+        $('span.infoGrape').html("Gew&uuml;rztraminer");
+        $('span.infoYear').html(currentYear);
+        $('span.infoAcres').html(props[`CS${currentYear}`]);
+
+        let grapeCode = 'GE';
+        let grapeValues = makeSparkline(e.layer, grapeCode);
+        console.log(grapeValues)
+        $('.grapespark').sparkline(grapeValues, {
+            width: '210px',
+            height: '30px',
+            lineColor: '#000000',
+            fillColor: '#D98939 ',
+            spotRadius: 0,
+            lineWidth: .5
+        });
+
+
+        // raise opacity level as visual affordance
+        e.layer.setStyle({
+            fillOpacity: .8,
+            fillColor: 'LightGoldenrodYellow'
+        });
+    })
+    geLayer.on('mouseout', function (e) {
+        // hide the info panel
+        info.hide();
+
+        // reset the layer style
+        e.layer.setStyle({
+            stroke: true,
+            color: '#520a1f',
+            weight: 1,
+            opacity: 1,
+            fill: true,
+            fillColor: '#520a1f',
+            fillOpacity: 0.2,
+        });
+    });
+    // end info 
+
+       // start info
+    // add mouseover info panels to each layer
+    meLayer.on('mouseover', function (e) {
+        console.log(e)
+        // remove the none class to display and show
+        info.show();
+        // access properties of target layer
+        const props = e.layer.feature.properties;
+        // populate HTML elements with relevant info
+        $('span.infoName').html(props.County);
+        $('span.infoGrape').html('Merlot');
+        $('span.infoYear').html(currentYear);
+        $('span.infoAcres').html(props[`CS${currentYear}`]);
+
+        let grapeCode = 'ME';
+        let grapeValues = makeSparkline(e.layer, grapeCode);
+        console.log(grapeValues)
+        $('.grapespark').sparkline(grapeValues, {
+            width: '210px',
+            height: '30px',
+            lineColor: '#000000',
+            fillColor: '#D98939 ',
+            spotRadius: 0,
+            lineWidth: .5
+        });
+
+        // raise opacity level as visual affordance
+        e.layer.setStyle({
+            fillOpacity: .8,
+            fillColor: 'LightGoldenrodYellow'
+        });
+    })
+    meLayer.on('mouseout', function (e) {
+        // hide the info panel
+        info.hide();
+
+        // reset the layer style
+        e.layer.setStyle({
+            stroke: true,
+            color: '#520a1f',
+            weight: 1,
+            opacity: 1,
+            fill: true,
+            fillColor: '#520a1f',
+            fillOpacity: 0.2,
+        });
+    });
+    // end info 
+
+       // start info
+    // add mouseover info panels to each layer
+    pgLayer.on('mouseover', function (e) {
+        console.log(e)
+        // remove the none class to display and show
+        info.show();
+        // access properties of target layer
+        const props = e.layer.feature.properties;
+        // populate HTML elements with relevant info
+        $('span.infoName').html(props.County);
+        $('span.infoGrape').html('Pinot Gris (Pinot Grigio)');
+        $('span.infoYear').html(currentYear);
+        $('span.infoAcres').html(props[`CS${currentYear}`]);
+
+        let grapeCode = 'PG';
+        let grapeValues = makeSparkline(e.layer, grapeCode);
+        console.log(grapeValues)
+        $('.grapespark').sparkline(grapeValues, {
+            width: '210px',
+            height: '30px',
+            lineColor: '#000000',
+            fillColor: '#D98939 ',
+            spotRadius: 0,
+            lineWidth: .5
+        });
+
+        // raise opacity level as visual affordance
+        e.layer.setStyle({
+            fillOpacity: .8,
+            fillColor: 'LightGoldenrodYellow'
+        });
+    })
+    pgLayer.on('mouseout', function (e) {
+        // hide the info panel
+        info.hide();
+
+        // reset the layer style
+        e.layer.setStyle({
+            stroke: true,
+            color: '#520a1f',
+            weight: 1,
+            opacity: 1,
+            fill: true,
+            fillColor: '#520a1f',
+            fillOpacity: 0.2,
+        });
+    });
+    // end info 
+
+       // start info
+    // add mouseover info panels to each layer
+    pnLayer.on('mouseover', function (e) {
+        console.log(e)
+        // remove the none class to display and show
+        info.show();
+        // access properties of target layer
+        const props = e.layer.feature.properties;
+        // populate HTML elements with relevant info
+        $('span.infoName').html(props.County);
+        $('span.infoGrape').html('Pinot Noir');
+        $('span.infoYear').html(currentYear);
+        $('span.infoAcres').html(props[`CS${currentYear}`]);
+
+        let grapeCode = 'PN';
+        let grapeValues = makeSparkline(e.layer, grapeCode);
+        console.log(grapeValues)
+        $('.grapespark').sparkline(grapeValues, {
+            width: '210px',
+            height: '30px',
+            lineColor: '#000000',
+            fillColor: '#D98939 ',
+            spotRadius: 0,
+            lineWidth: .5
+        });
+
+        // raise opacity level as visual affordance
+        e.layer.setStyle({
+            fillOpacity: .8,
+            fillColor: 'LightGoldenrodYellow'
+        });
+    })
+    pnLayer.on('mouseout', function (e) {
+        // hide the info panel
+        info.hide();
+
+        // reset the layer style
+        e.layer.setStyle({
+            stroke: true,
+            color: '#520a1f',
+            weight: 1,
+            opacity: 1,
+            fill: true,
+            fillColor: '#520a1f',
+            fillOpacity: 0.2,
+        });
+    });
+    // end info 
+
+       // start info
+    // add mouseover info panels to each layer
+    reLayer.on('mouseover', function (e) {
+        console.log(e)
+        // remove the none class to display and show
+        info.show();
+        // access properties of target layer
+        const props = e.layer.feature.properties;
+        // populate HTML elements with relevant info
+        $('span.infoName').html(props.County);
+        $('span.infoGrape').html('Reisling');
+        $('span.infoYear').html(currentYear);
+        $('span.infoAcres').html(props[`CS${currentYear}`]);
+
+        let grapeCode = 'RE';
+        let grapeValues = makeSparkline(e.layer, grapeCode);
+        console.log(grapeValues)
+        $('.grapespark').sparkline(grapeValues, {
+            width: '210px',
+            height: '30px',
+            lineColor: '#000000',
+            fillColor: '#D98939 ',
+            spotRadius: 0,
+            lineWidth: .5
+        });
+
+        // raise opacity level as visual affordance
+        e.layer.setStyle({
+            fillOpacity: .8,
+            fillColor: 'LightGoldenrodYellow'
+        });
+    })
+    reLayer.on('mouseout', function (e) {
+        // hide the info panel
+        info.hide();
+
+        // reset the layer style
+        e.layer.setStyle({
+            stroke: true,
+            color: '#520a1f',
+            weight: 1,
+            opacity: 1,
+            fill: true,
+            fillColor: '#520a1f',
+            fillOpacity: 0.2,
+        });
+    });
+    // end info 
+
+       // start info
+    // add mouseover info panels to each layer
+    sbLayer.on('mouseover', function (e) {
+        console.log(e)
+        // remove the none class to display and show
+        info.show();
+        // access properties of target layer
+        const props = e.layer.feature.properties;
+        // populate HTML elements with relevant info
+        $('span.infoName').html(props.County);
+        $('span.infoGrape').html('Sauvignon Blanc');
+        $('span.infoYear').html(currentYear);
+        $('span.infoAcres').html(props[`CS${currentYear}`]);
+
+        let grapeCode = 'SB';
+        let grapeValues = makeSparkline(e.layer, grapeCode);
+        console.log(grapeValues)
+        $('.grapespark').sparkline(grapeValues, {
+            width: '210px',
+            height: '30px',
+            lineColor: '#000000',
+            fillColor: '#D98939 ',
+            spotRadius: 0,
+            lineWidth: .5
+        });
+
+        // raise opacity level as visual affordance
+        e.layer.setStyle({
+            fillOpacity: .8,
+            fillColor: 'LightGoldenrodYellow'
+        });
+    })
+    sbLayer.on('mouseout', function (e) {
+        // hide the info panel
+        info.hide();
+
+        // reset the layer style
+        e.layer.setStyle({
+            stroke: true,
+            color: '#520a1f',
+            weight: 1,
+            opacity: 1,
+            fill: true,
+            fillColor: '#520a1f',
+            fillOpacity: 0.2,
+        });
+    });
+    // end info 
+
+       // start info
+    // add mouseover info panels to each layer
+    syLayer.on('mouseover', function (e) {
+        console.log(e)
+        // remove the none class to display and show
+        info.show();
+        // access properties of target layer
+        const props = e.layer.feature.properties;
+        // populate HTML elements with relevant info
+        $('span.infoName').html(props.County);
+        $('span.infoGrape').html('Syrah');
+        $('span.infoYear').html(currentYear);
+        $('span.infoAcres').html(props[`CS${currentYear}`]);
+
+        let grapeCode = 'SY';
+        let grapeValues = makeSparkline(e.layer, grapeCode);
+        console.log(grapeValues)
+        $('.grapespark').sparkline(grapeValues, {
+            width: '210px',
+            height: '30px',
+            lineColor: '#000000',
+            fillColor: '#D98939 ',
+            spotRadius: 0,
+            lineWidth: .5
+        });
+
+        // raise opacity level as visual affordance
+        e.layer.setStyle({
+            fillOpacity: .8,
+            fillColor: 'LightGoldenrodYellow'
+        });
+    })
+    syLayer.on('mouseout', function (e) {
+        // hide the info panel
+        info.hide();
+
+        // reset the layer style
+        e.layer.setStyle({
+            stroke: true,
+            color: '#520a1f',
+            weight: 1,
+            opacity: 1,
+            fill: true,
+            fillColor: '#520a1f',
+            fillOpacity: 0.2,
+        });
+    });
+    // end info 
+
+       // start info
+    // add mouseover info panels to each layer
+    ziLayer.on('mouseover', function (e) {
+        console.log(e)
+        // remove the none class to display and show
+        info.show();
+        // access properties of target layer
+        const props = e.layer.feature.properties;
+        // populate HTML elements with relevant info
+        $('span.infoName').html(props.County);
+        $('span.infoGrape').html('Zinfandel');
+        $('span.infoYear').html(currentYear);
+        $('span.infoAcres').html(props[`CS${currentYear}`]);
+
+        let grapeCode = 'ZI';
+        let grapeValues = makeSparkline(e.layer, grapeCode);
+        console.log(grapeValues)
+        $('.grapespark').sparkline(grapeValues, {
+            width: '210px',
+            height: '30px',
+            lineColor: '#000000',
+            fillColor: '#D98939 ',
+            spotRadius: 0,
+            lineWidth: .5
+        });
+
+        // raise opacity level as visual affordance
+        e.layer.setStyle({
+            fillOpacity: .8,
+            fillColor: 'LightGoldenrodYellow'
+        });
+    })
+    ziLayer.on('mouseout', function (e) {
+        // hide the info panel
+        info.hide();
+
+        // reset the layer style
+        e.layer.setStyle({
+            stroke: true,
+            color: '#520a1f',
+            weight: 1,
+            opacity: 1,
+            fill: true,
+            fillColor: '#520a1f',
+            fillOpacity: 0.2,
+        });
+    });
+    // end info 
 
     // when the mouse moves on the document
     $(document).mousemove(function (e) {
@@ -456,6 +908,25 @@ function getRadius(val) {
     return radius * .6;
 }
 
+function makeSparkline(layer, grapeCode) {
+    // empty array value
+    const grapeValues = [];
+
+    // access properties of target layer
+    const props = layer.feature.properties;
+
+    // add values for each year
+    grapeValues.push(props[`${grapeCode}1971`]);
+    grapeValues.push(props[`${grapeCode}1981`]);
+    grapeValues.push(props[`${grapeCode}1991`]);
+    grapeValues.push(props[`${grapeCode}2001`]);
+    grapeValues.push(props[`${grapeCode}2019`]);
+
+    console.log(grapeValues);
+
+    return grapeValues;
+
+}
 
 
 function actLikeComment(val) {

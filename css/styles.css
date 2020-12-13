@@ -39,3 +39,20 @@ body {
 #info {
   z-index: 1000;
 }
+
+.infoName {
+  color: var(--dp);
+
+}
+.infoGrape{ 
+  color: var(--blk);
+  
+}
+.infoYear {
+  color: var(--blk);
+
+}
+.infoAcres {
+  color: var(--blk);
+
+}
