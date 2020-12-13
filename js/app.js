@@ -180,19 +180,18 @@ function drawSlider(csLayer, chLayer, geLayer, meLayer, pgLayer, pnLayer, reLaye
     $('#slider input[type=range]')
         .on('input', function () {
 
-            // current value of slider is current grade level
+            // current value of slider is current year
             var currentYear = this.value;
 
             if (currentYear == 2021) {
                 currentYear = 2019;
             }
 
-            // resize the circles with updated grade level
+            // resize the circles with updated year
             processLayer(csLayer, chLayer, geLayer, meLayer, pgLayer, pnLayer, reLayer, sbLayer, syLayer, ziLayer, currentYear);
 
             // update heading
             $('#slider h3 span').html(currentYear);
-
 
         });
 }
@@ -312,7 +311,7 @@ function drawLegend(csLayer, chLayer, geLayer, meLayer, pgLayer, pnLayer, reLaye
 
 
 // ++++++++++ PROCESS LAYER DATA +++++++++++++++
-function processLayer(csLayer, chLayer, geLayer, meLayer, pgLayer, pnLayer, riLayer, sbLayer, syLayer, ziLayer, currentYear) {
+function processLayer(csLayer, chLayer, geLayer, meLayer, pgLayer, pnLayer, reLayer, sbLayer, syLayer, ziLayer, currentYear) {
 
     // hide info panel from view initially
      const info = $('#info').hide();
@@ -330,12 +329,31 @@ function processLayer(csLayer, chLayer, geLayer, meLayer, pgLayer, pnLayer, riLa
         let value = layer.feature.properties[`CH${currentYear}`]
         const radius = getRadius(value)
         layer.setRadius(radius);
+        // reset the layer style
+        layer.setStyle({
+            stroke: true,
+            color: '#d6940a',
+            weight: 1,
+            opacity: 1,
+            fill: true,
+            fillColor: '#d6940a',
+            fillOpacity: 0.2,
+        });
     });
 
     geLayer.eachLayer(function (layer) {
         let value = layer.feature.properties[`GE${currentYear}`]
         const radius = getRadius(value)
         layer.setRadius(radius);
+        layer.setStyle({
+            stroke: true,
+            color: '#d6940a',
+            weight: 1,
+            opacity: 1,
+            fill: true,
+            fillColor: '#d6940a',
+            fillOpacity: 0.2,
+        });
     });
 
     meLayer.eachLayer(function (layer) {
@@ -348,6 +366,15 @@ function processLayer(csLayer, chLayer, geLayer, meLayer, pgLayer, pnLayer, riLa
         let value = layer.feature.properties[`PG${currentYear}`]
         const radius = getRadius(value)
         layer.setRadius(radius);
+        layer.setStyle({
+            stroke: true,
+            color: '#d6940a',
+            weight: 1,
+            opacity: 1,
+            fill: true,
+            fillColor: '#d6940a',
+            fillOpacity: 0.2,
+        });
     });
 
     pnLayer.eachLayer(function (layer) {
@@ -356,7 +383,7 @@ function processLayer(csLayer, chLayer, geLayer, meLayer, pgLayer, pnLayer, riLa
         layer.setRadius(radius);
     });
 
-    riLayer.eachLayer(function (layer) {
+    reLayer.eachLayer(function (layer) {
         let value = layer.feature.properties[`RI${currentYear}`]
         const radius = getRadius(value)
         layer.setRadius(radius);
@@ -366,6 +393,15 @@ function processLayer(csLayer, chLayer, geLayer, meLayer, pgLayer, pnLayer, riLa
         let value = layer.feature.properties[`SB${currentYear}`]
         const radius = getRadius(value)
         layer.setRadius(radius);
+        layer.setStyle({
+            stroke: true,
+            color: '#d6940a',
+            weight: 1,
+            opacity: 1,
+            fill: true,
+            fillColor: '#d6940a',
+            fillOpacity: 0.2,
+        });
     });
 
     syLayer.eachLayer(function (layer) {
@@ -450,7 +486,7 @@ function processLayer(csLayer, chLayer, geLayer, meLayer, pgLayer, pnLayer, riLa
             width: '210px',
             height: '30px',
             lineColor: '#000000',
-            fillColor: '#D98939 ',
+            fillColor: '#d6940a',
             spotRadius: 0,
             lineWidth: .5
         });
@@ -468,11 +504,11 @@ function processLayer(csLayer, chLayer, geLayer, meLayer, pgLayer, pnLayer, riLa
         // reset the layer style
         e.layer.setStyle({
             stroke: true,
-            color: '#520a1f',
+            color: '#d6940a',
             weight: 1,
             opacity: 1,
             fill: true,
-            fillColor: '#520a1f',
+            fillColor: '#d6940a',
             fillOpacity: 0.2,
         });
     });
@@ -499,7 +535,7 @@ function processLayer(csLayer, chLayer, geLayer, meLayer, pgLayer, pnLayer, riLa
             width: '210px',
             height: '30px',
             lineColor: '#000000',
-            fillColor: '#D98939 ',
+            fillColor: '##d6940a',
             spotRadius: 0,
             lineWidth: .5
         });
@@ -518,11 +554,11 @@ function processLayer(csLayer, chLayer, geLayer, meLayer, pgLayer, pnLayer, riLa
         // reset the layer style
         e.layer.setStyle({
             stroke: true,
-            color: '#520a1f',
+            color: '#d6940a',
             weight: 1,
             opacity: 1,
             fill: true,
-            fillColor: '#520a1f',
+            fillColor: '#d6940a',
             fillOpacity: 0.2,
         });
     });
@@ -598,7 +634,7 @@ function processLayer(csLayer, chLayer, geLayer, meLayer, pgLayer, pnLayer, riLa
             width: '210px',
             height: '30px',
             lineColor: '#000000',
-            fillColor: '#D98939 ',
+            fillColor: '##d6940a',
             spotRadius: 0,
             lineWidth: .5
         });
@@ -616,11 +652,11 @@ function processLayer(csLayer, chLayer, geLayer, meLayer, pgLayer, pnLayer, riLa
         // reset the layer style
         e.layer.setStyle({
             stroke: true,
-            color: '#520a1f',
+            color: '#d6940a',
             weight: 1,
             opacity: 1,
             fill: true,
-            fillColor: '#520a1f',
+            fillColor: '#d6940a',
             fillOpacity: 0.2,
         });
     });
@@ -696,7 +732,7 @@ function processLayer(csLayer, chLayer, geLayer, meLayer, pgLayer, pnLayer, riLa
             width: '210px',
             height: '30px',
             lineColor: '#000000',
-            fillColor: '#D98939 ',
+            fillColor: '#d6940a',
             spotRadius: 0,
             lineWidth: .5
         });
@@ -714,11 +750,11 @@ function processLayer(csLayer, chLayer, geLayer, meLayer, pgLayer, pnLayer, riLa
         // reset the layer style
         e.layer.setStyle({
             stroke: true,
-            color: '#520a1f',
+            color: '#d6940a',
             weight: 1,
             opacity: 1,
             fill: true,
-            fillColor: '#520a1f',
+            fillColor: '#d6940a',
             fillOpacity: 0.2,
         });
     });
@@ -745,7 +781,7 @@ function processLayer(csLayer, chLayer, geLayer, meLayer, pgLayer, pnLayer, riLa
             width: '210px',
             height: '30px',
             lineColor: '#000000',
-            fillColor: '#D98939 ',
+            fillColor: '#d6940a',
             spotRadius: 0,
             lineWidth: .5
         });
@@ -763,11 +799,11 @@ function processLayer(csLayer, chLayer, geLayer, meLayer, pgLayer, pnLayer, riLa
         // reset the layer style
         e.layer.setStyle({
             stroke: true,
-            color: '#520a1f',
+            color: '#d6940a',
             weight: 1,
             opacity: 1,
             fill: true,
-            fillColor: '#520a1f',
+            fillColor: '#d6940a',
             fillOpacity: 0.2,
         });
     });
