@@ -30,7 +30,7 @@ L.tileLayer(`https://api.mapbox.com/styles/v1/${mapboxAccount}/${MapboxStyle}/ti
 // Use JQuery to get data for California outline and set map display
 // data used for basemap position only
 
-$.getJSON("../data/california.geojson", function (data) {
+$.getJSON("data/california.geojson", function (data) {
     // jQuery method uses AJAX request for the GeoJSON data
     console.log(data);
 
