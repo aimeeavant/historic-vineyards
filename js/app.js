@@ -437,7 +437,7 @@ function processLayer(csLayer, chLayer, geLayer, meLayer, pgLayer, pnLayer, reLa
             width: '210px',
             height: '30px',
             lineColor: '#000000',
-            fillColor: '#D98939 ',
+            fillColor: '#520a1f',
             spotRadius: 0,
             lineWidth: .5
         });
@@ -535,7 +535,7 @@ function processLayer(csLayer, chLayer, geLayer, meLayer, pgLayer, pnLayer, reLa
             width: '210px',
             height: '30px',
             lineColor: '#000000',
-            fillColor: '##d6940a',
+            fillColor: '#d6940a',
             spotRadius: 0,
             lineWidth: .5
         });
@@ -585,7 +585,7 @@ function processLayer(csLayer, chLayer, geLayer, meLayer, pgLayer, pnLayer, reLa
             width: '210px',
             height: '30px',
             lineColor: '#000000',
-            fillColor: '#D98939 ',
+            fillColor: '#520a1f',
             spotRadius: 0,
             lineWidth: .5
         });
@@ -634,7 +634,7 @@ function processLayer(csLayer, chLayer, geLayer, meLayer, pgLayer, pnLayer, reLa
             width: '210px',
             height: '30px',
             lineColor: '#000000',
-            fillColor: '##d6940a',
+            fillColor: '#d6940a',
             spotRadius: 0,
             lineWidth: .5
         });
@@ -683,7 +683,7 @@ function processLayer(csLayer, chLayer, geLayer, meLayer, pgLayer, pnLayer, reLa
             width: '210px',
             height: '30px',
             lineColor: '#000000',
-            fillColor: '#D98939 ',
+            fillColor: '#520a1f',
             spotRadius: 0,
             lineWidth: .5
         });
