@@ -384,7 +384,7 @@ function processLayer(csLayer, chLayer, geLayer, meLayer, pgLayer, pnLayer, reLa
     });
 
     reLayer.eachLayer(function (layer) {
-        let value = layer.feature.properties[`RI${currentYear}`]
+        let value = layer.feature.properties[`RE${currentYear}`]
         const radius = getRadius(value)
         layer.setRadius(radius);
     });
