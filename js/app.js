@@ -387,6 +387,15 @@ function processLayer(csLayer, chLayer, geLayer, meLayer, pgLayer, pnLayer, reLa
         let value = layer.feature.properties[`RE${currentYear}`]
         const radius = getRadius(value)
         layer.setRadius(radius);
+        layer.setStyle({
+            stroke: true,
+            color: '#d6940a',
+            weight: 1,
+            opacity: 1,
+            fill: true,
+            fillColor: '#d6940a',
+            fillOpacity: 0.2,
+        });
     });
 
     sbLayer.eachLayer(function (layer) {
@@ -723,7 +732,7 @@ function processLayer(csLayer, chLayer, geLayer, meLayer, pgLayer, pnLayer, reLa
         $('span.infoName').html(props.County);
         $('span.infoGrape').html('Reisling');
         $('span.infoYear').html(currentYear);
-        $('span.infoAcres').html(props[`CS${currentYear}`]);
+        $('span.infoAcres').html(props[`RE${currentYear}`]);
 
         let grapeCode = 'RE';
         let grapeValues = makeSparkline(e.layer, grapeCode);
