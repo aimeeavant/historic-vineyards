@@ -36,6 +36,11 @@ body {
 .leaflet-touch .leaflet-control-layers, .leaflet-touch .leaflet-bar {
   border: 0px;
 }
+.leaflet-left .leaflet-control {
+  margin-left: 0;
+  text-shadow:1px 1px 1px var(--bone), -1px -1px 1px var(--bone);
+  /* text-shadow : horizontal-shadow vertical-shadow blur color; */
+}
 #info {
   z-index: 1000;
 }
