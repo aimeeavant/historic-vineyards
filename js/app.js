@@ -50,7 +50,7 @@ $.getJSON("./data/california.geojson", function (data) {
     // fit the map's bounds and zoom level using the counties extent
     // add padding
     map.fitBounds(california.getBounds(), {
-        padding: [5, 5] // add padding around counties
+        padding: [200, 5] // add padding around counties
     });
 
 }); // end getJSON
